@@ -1,7 +1,6 @@
 
-
 <p align="center">
-  <img src="AD..png" width="100%" height="180" style="object-fit: contain; background-color: #0c0f12; display: block;" alt="Header">
+  <img src="AD!!.png" alt="Название">
 </p>
 
 ## About me 
