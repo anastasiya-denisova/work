@@ -1,7 +1,8 @@
 
 
-<img src="AD..png" width="100%" height="180" style="object-fit: cover; display: block;" alt="Header">
-
+<p align="center">
+  <img src="AD..png" width="100%" height="180" style="object-fit: contain; background-color: #0c0f12; display: block;" alt="Header">
+</p>
 
 ## About me 
 Начинающий специалист по тестированию (QA). Сейчас активно осваиваю базу тестирования и инструменты разработки. Обладаю высокой мотивацией, не боюсь трудностей и рутинных задач. Стремлюсь развиваться в сфере IT, стать сильным профессионалом и приносить пользу продукту.
