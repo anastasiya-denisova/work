@@ -1,8 +1,6 @@
 
 
-![WelcomePic](ad.png)
-
-
+<img src="AD..png" width="100%" height="180" style="object-fit: cover; display: block;" alt="Header">
 
 
 ## About me 
