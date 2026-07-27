@@ -17,7 +17,9 @@
               "const responseData = pm.response.json();",
               "pm.collectionVariables.set(\"accessToken\", responseData.accessToken);",
               "pm.collectionVariables.set(\"refreshToken\", responseData.refreshToken);",
-              ""
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -209,13 +211,28 @@
     },
     {
       "name": "get me",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
           "bearer": [
             {
               "key": "token",
-              "value": "{{accessToken}}",
+              "value": "{{refreshToken}}",
               "type": "string"
             }
           ]
@@ -237,6 +254,21 @@
     },
     {
       "name": "refresh",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
@@ -282,6 +314,21 @@
     },
     {
       "name": "GET carts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
@@ -300,6 +347,21 @@
     },
     {
       "name": "NEW cart",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
@@ -337,12 +399,27 @@
     },
     {
       "name": "PATCH carts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "PUT",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"merge\": true,\n  \"products\": [\n    {\n      \"id\": 1,\n      \"quantity\": 11\n    }\n  ]\n}",
+          "raw": "{\n  \"merge\": true,\n  \"products\": [\n    {\n      \"id\": 1,\n      \"quantity\": 10\n    }\n  ]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -364,6 +441,21 @@
     },
     {
       "name": "DELETE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "noauth"
@@ -423,15 +515,15 @@
   "variable": [
     {
       "key": "host",
-      "value": ""
+      "value": "https://dummyjson.com"
     },
     {
       "key": "accessToken",
-      "value": ""
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3ODUxNTc2ODAsImV4cCI6MTc4NTE1OTQ4MH0.wZ4HFoaCLpwRnR82zRcJ_GpT2zoj4UKWNWfgVFlgfzA"
     },
     {
       "key": "refreshToken",
-      "value": ""
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3ODUxNTc2ODAsImV4cCI6MTc4Nzc0OTY4MH0.CsVMOilDsYqnI1pTZLVBoRI6zkrzp8P12wBAK6dRgRs"
     }
   ]
 }
