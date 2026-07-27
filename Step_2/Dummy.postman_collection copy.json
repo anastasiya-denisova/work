@@ -15,8 +15,8 @@
           "script": {
             "exec": [
               "const responseData = pm.response.json();",
-              "pm.environment.set(\"accessToken\", responseData.accessToken);",
-              "pm.environment.set(\"refreshToken\", responseData.refreshToken);",
+              "pm.collectionVariables.set(\"accessToken\", responseData.accessToken);",
+              "pm.collectionVariables.set(\"refreshToken\", responseData.refreshToken);",
               ""
             ],
             "type": "text/javascript",
@@ -52,11 +52,12 @@
           ]
         },
         "url": {
-          "raw": "{{host}}/login",
+          "raw": "{{host}}/auth/login",
           "host": [
             "{{host}}"
           ],
           "path": [
+            "auth",
             "login"
           ]
         }
@@ -222,11 +223,12 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{host}}/me",
+          "raw": "{{host}}/auth/me",
           "host": [
             "{{host}}"
           ],
           "path": [
+            "auth",
             "me"
           ]
         }
@@ -266,11 +268,12 @@
           ]
         },
         "url": {
-          "raw": "{{host}}/refresh",
+          "raw": "{{host}}/auth/refresh",
           "host": [
             "{{host}}"
           ],
           "path": [
+            "auth",
             "refresh"
           ]
         }
@@ -347,11 +350,9 @@
           }
         },
         "url": {
-          "raw": "https://dummyjson.com/carts/1",
-          "protocol": "https",
+          "raw": "{{host}}/carts/1",
           "host": [
-            "dummyjson",
-            "com"
+            "{{host}}"
           ],
           "path": [
             "carts",
@@ -392,6 +393,9 @@
       "response": []
     }
   ],
+  "auth": {
+    "type": "bearer"
+  },
   "event": [
     {
       "listen": "prerequest",
@@ -414,6 +418,20 @@
           ""
         ]
       }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": ""
+    },
+    {
+      "key": "accessToken",
+      "value": ""
+    },
+    {
+      "key": "refreshToken",
+      "value": ""
     }
   ]
 }
